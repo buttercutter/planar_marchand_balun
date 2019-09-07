@@ -1,0 +1,173 @@
+$begin 'AnsoftNeutralFile'
+	Version(4, 0)
+	Source('Ansoft Designer', '2018.2.0')
+	Date='Sat Sep  7 15:38:46 2019'
+	DefaultUnits='m'
+	$begin 'PadShapes'
+		'Circle0.00085'(Circle(0.00085))
+	$end 'PadShapes'
+	$begin 'Padstacks'
+		$begin 'Round 0.85mm/0.75mm'
+			Hole(Circle(0.00075))
+			Top('Circle0.00085', 0, 0, 0)
+			Bottom('Circle0.00085', 0, 0, 0)
+		$end 'Round 0.85mm/0.75mm'
+	$end 'Padstacks'
+	$begin 'Symbols'
+		$begin 'EMDesign1'
+			$begin 'SymPins'
+				$begin 'SymPinDef'
+					SymPin('Port1', -0.00508, -0.00254, 0, 0, 0.00254, false, false, '')
+					$begin 'PropDisplays'
+						PinName(2, 0, -0.00508, -0.001905, 0, 'c', 5, 'Port1')
+					$end 'PropDisplays'
+				$end 'SymPinDef'
+				$begin 'SymPinDef'
+					SymPin('Port3', 0.00508, 0, 180, 0, 0.00254, false, false, '')
+					$begin 'PropDisplays'
+						PinName(2, 0, 0.00508, 0.000635, 0, 'c', 5, 'Port3')
+					$end 'PropDisplays'
+				$end 'SymPinDef'
+				$begin 'SymPinDef'
+					SymPin('Port2', -0.00508, 0, 0, 0, 0.00254, false, false, '')
+					$begin 'PropDisplays'
+						PinName(2, 0, -0.00508, 0.000635, 0, 'c', 5, 'Port2')
+					$end 'PropDisplays'
+				$end 'SymPinDef'
+			$end 'SymPins'
+			$begin 'SymGraphics'
+				SymRectangle(0, 0, 0, -0.00254, 0.00508, 0.01016, 0)
+				SymRectangle(0, 1, -0.00211666666666667, 0, 0.000423333333333333, 0.000423333333333334, 0)
+				SymRectangle(0, 1, -0.00211666666666667, -4.33680868994202e-19, 0.000423333333333334, 0.000423333333333333, 0)
+				SymRectangle(0, 1, -0.00211666666666667, 4.33680868994202e-19, 0.000423333333333334, 0.000423333333333333, 0)
+			$end 'SymGraphics'
+		$end 'EMDesign1'
+	$end 'Symbols'
+	$begin 'Materials'
+		$begin 'FR4_epoxy'
+			Simple('permittivity', 4.4)
+			Simple('conductivity', 0)
+			Simple('dielectric_loss_tangent', 0.02)
+			Simple('thermal_conductivity', 0.294)
+			Simple('mass_density', 1900)
+			Simple('specific_heat', 1150)
+			Simple('youngs_modulus', 11000000000)
+			Simple('poissons_ratio', 0.28)
+			Simple('thermal_expansion_coeffcient', 1.5e-05)
+		$end 'FR4_epoxy'
+		$begin 'copper'
+			Simple('permeability', 0.999991)
+			Simple('conductivity', 58000000)
+			Simple('thermal_conductivity', 400)
+			Simple('mass_density', 8933)
+			Simple('specific_heat', 385)
+			Simple('youngs_modulus', 120000000000)
+			Simple('poissons_ratio', 0.38)
+			Simple('thermal_expansion_coeffcient', 1.77e-05)
+		$end 'copper'
+	$end 'Materials'
+	$begin 'Components'
+		$begin 'EMDesign1'
+			CompDef('EMDesign1', '', '', 'U', 1, 'EMDesign1')
+			Terminal('Port1', 'Port1', 'A', false)
+			Terminal('Port3', 'Port3', 'A', false)
+			Terminal('Port2', 'Port2', 'A', false)
+			$begin 'Properties'
+				TextProp('ModelName', 'FieldSolver')
+				MenuProp('CoSimulator', 0, 'DefaultNetlist')
+			$end 'Properties'
+		$end 'EMDesign1'
+	$end 'Components'
+	$begin 'LayoutData'
+		$begin 'LayoutCell'
+			CellName='EMDesign1'
+			$begin 'Netlist'
+				$begin 'InterfacePort'
+					Name='Port1'
+				$end 'InterfacePort'
+				$begin 'InterfacePort'
+					Name='Port2'
+				$end 'InterfacePort'
+				$begin 'InterfacePort'
+					Name='Port3'
+				$end 'InterfacePort'
+				$begin 'Net'
+					net_4('Signal', '', '')
+					$begin 'Properties'
+						CheckboxProp('AlignMicrowavePorts', true)
+					$end 'Properties'
+				$end 'Net'
+				$begin 'Net'
+					Port1('Signal', '', '')
+					InterfacePorts('Port1')
+					$begin 'Properties'
+						CheckboxProp('AlignMicrowavePorts', true)
+					$end 'Properties'
+				$end 'Net'
+				$begin 'Net'
+					Port2('Signal', '', '')
+					InterfacePorts('Port2')
+					$begin 'Properties'
+						CheckboxProp('AlignMicrowavePorts', true)
+					$end 'Properties'
+				$end 'Net'
+				$begin 'Net'
+					Port3('Signal', '', '')
+					InterfacePorts('Port3')
+					$begin 'Properties'
+						CheckboxProp('AlignMicrowavePorts', true)
+					$end 'Properties'
+				$end 'Net'
+			$end 'Netlist'
+			$begin 'Layout'
+				$begin 'LayoutPorts'
+					$begin 'EdgePort'
+						Port('Port1', '37'(3))
+					$end 'EdgePort'
+					$begin 'EdgePort'
+						Port('Port3', '5'(2))
+					$end 'EdgePort'
+					$begin 'EdgePort'
+						Port('Port2', '10'(0))
+					$end 'EdgePort'
+				$end 'LayoutPorts'
+				$begin 'LayoutNets'
+					$begin 'LayoutNet'
+						Name='Port3'
+					$end 'LayoutNet'
+					$begin 'LayoutNet'
+						Name='Port1'
+					$end 'LayoutNet'
+					$begin 'LayoutNet'
+						Name='Port2'
+					$end 'LayoutNet'
+					$begin 'LayoutNet'
+						Name='net_4'
+						via(36, 'Top', 'Ground', 0.0977538744988767, 0.00036614557868149, 'Round 0.85mm/0.75mm', 0)
+						via(13, 'Top', 'Ground', 0.0925285264238482, 0.0172288715839386, 'Round 0.85mm/0.75mm', 0)
+						Graphics('Top', Polygon(37, 0, vertex(0.111057265934445, 0.0152288388096991), vertex(0.110677180338867, 0.0161464466094067), vertex(0.0835606601717798, 0.0161464466094067), vertex(0.0695606601717798, 0.0161464466094067), vertex(0.0695606601717798, 0.0141464466094067), vertex(0.0835606601717798, 0.0141464466094067), vertex(0.107146446609407, 0.0141464466094067), vertex(0.0948535533905933, 0.00185355339059327), vertex(0.0962677669529663, 0.000439339828220184)))
+						Graphics('Top', Polygon(5, 0, vertex(0.109199532497468, 0.0103595228962952), vertex(0.109199532497468, 0.0021999969612807), vertex(0.109199535336581, -0.0132281795468643), vertex(0.111199535336581, -0.0132281795468643), vertex(0.111199532497468, 0.0021999969612807), vertex(0.111199532497468, 0.0138902566257556), vertex(0.11028192469776, 0.0142703422213338), vertex(0.0963584846255806, 0.000346902149154227), vertex(0.0977670460148174, -0.0010729635863552)))
+						Graphics('Top', Rectangle(9, 0, 0.101396837865286, 0.0172925451770425, 0.0196860856533015, 0.0019999984651804, 0))
+						Graphics('Top', Rectangle(10, 0, 0.110239559007401, 0.0301268240599151, 0.00200065070833022, 0.0236685593005648, 0))
+					$end 'LayoutNet'
+				$end 'LayoutNets'
+			$end 'Layout'
+		$end 'LayoutCell'
+		$begin 'Design'
+			Name='EMDesign1'
+			$begin 'TopLayout'
+				$begin 'Layers'
+					StackupLayer('Top', 'signal', 'top', 3.556e-05, 'copper')
+					StackupLayer('dielectric', 'dielectric', 'neither', 0.0016, 'FR4_epoxy')
+					StackupLayer('Ground', 'ground', 'bottom', 3.556e-05, 'copper')
+					Layer('Errors', 'error', 'neither')
+				$end 'Layers'
+				$begin 'PhysicalDimensions'
+					Polygon(0, vertex(0.0695606601717798, -0.0132281795468643), vertex(0.111239884361567, -0.0132281795468643), vertex(0.111239884361567, 0.0419611037101975), vertex(0.0695606601717798, 0.0419611037101975), vertex(0.0695606601717798, -0.0132281795468643))
+				$end 'PhysicalDimensions'
+			$end 'TopLayout'
+		$end 'Design'
+	$end 'LayoutData'
+	$begin 'Footprints'
+	$end 'Footprints'
+$end 'AnsoftNeutralFile'
